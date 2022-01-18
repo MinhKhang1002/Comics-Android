@@ -2,9 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
     <com.smarteist.autoimageslider.SliderView
+
         android:id="@+id/imageSlider"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -21,5 +23,13 @@
         app:sliderIndicatorUnselectedColor="#FFF"
         app:sliderScrollTimeInSec="4"
         app:sliderStartAutoCycle="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/imageSlider"
+        android:background="@drawable/custom_color"
+        android:text="Thay đổi" />
+
 
 </RelativeLayout>

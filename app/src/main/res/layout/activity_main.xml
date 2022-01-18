@@ -15,15 +15,18 @@
 
     </FrameLayout>
 
+                         <!--BottomNavigationView-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_bottom"
+        style="@style/BottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:itemBackground="@color/white"
         app:itemIconTint="@color/color_bottom_nav"
-        app:labelVisibilityMode="labeled"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
         app:itemTextColor="@color/color_bottom_nav"
-        style="@style/BottomNavigationView"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/menu_bottom_nav" />
 </RelativeLayout>
