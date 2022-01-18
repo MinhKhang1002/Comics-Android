@@ -10,7 +10,10 @@
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/nav_bottom"/>
+        android:layout_above="@+id/nav_bottom">
+
+
+    </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_bottom"
@@ -19,10 +22,8 @@
         android:layout_alignParentBottom="true"
         app:itemBackground="@color/white"
         app:itemIconTint="@color/color_bottom_nav"
-        app:itemTextColor="#5EBADD"
-        app:menu="@menu/menu_bottom_nav"
-
-        />
-
-
+        app:labelVisibilityMode="labeled"
+        app:itemTextColor="@color/color_bottom_nav"
+        style="@style/BottomNavigationView"
+        app:menu="@menu/menu_bottom_nav" />
 </RelativeLayout>

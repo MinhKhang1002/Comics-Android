@@ -10,11 +10,12 @@
         <entry key="..\:/Users/n18dccn092/AndroidStudioProjects/Comics/app/src/main/res/drawable/outline_home_24.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/n18dccn092/AndroidStudioProjects/Comics/app/src/main/res/drawable/outline_menu_book_24.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/n18dccn092/AndroidStudioProjects/Comics/app/src/main/res/drawable/outline_search_24.xml" value="0.14635416666666667" />
-        <entry key="..\:/Users/n18dccn092/AndroidStudioProjects/Comics/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/n18dccn092/AndroidStudioProjects/Comics/app/src/main/res/layout/home1_fragment.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/n18dccn092/AndroidStudioProjects/Comics/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/n18dccn092/AndroidStudioProjects/Comics/app/src/main/res/layout/home1_fragment.xml" value="0.16" />
         <entry key="..\:/Users/n18dccn092/AndroidStudioProjects/Comics/app/src/main/res/layout/home2_fragment.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/n18dccn092/AndroidStudioProjects/Comics/app/src/main/res/layout/home3_fragment.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/n18dccn092/AndroidStudioProjects/Comics/app/src/main/res/layout/home_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/n18dccn092/AndroidStudioProjects/Comics/app/src/main/res/layout/slider_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/n18dccn092/AndroidStudioProjects/Comics/app/src/main/res/menu/menu_bottom_nav.xml" value="0.25416666666666665" />
       </map>
     </option>
