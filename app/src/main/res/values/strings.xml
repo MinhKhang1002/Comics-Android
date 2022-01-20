@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Comics</string>
     <string name="action_home">Trang chủ</string>
-   <string name="action_search">Tìm kiếm</string>
+    <string name="action_search">Tìm kiếm</string>
     <string name="action_library">Tủ sách</string>
     <string name="action_mine">Tôi</string>
 </resources>
