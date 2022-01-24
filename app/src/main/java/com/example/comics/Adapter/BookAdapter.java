@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.comics.Models.Book;
+import com.example.comics.Models.books;
 import com.example.comics.R;
 import com.squareup.picasso.Picasso;
 
@@ -19,11 +19,11 @@ import java.util.List;
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder> {
 
     private Context mContext;
-    private List<Book> mListBook;
+    private List<books> mListBook;
     public BookAdapter(Context mContext){
         this.mContext = mContext;
     }
-    public void setData(List<Book> list){
+    public void setData(List<books> list){
         this.mListBook =list;
         notifyDataSetChanged();
     }
@@ -37,7 +37,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull BookViewHolder holder, int position) {
-        Book book = mListBook.get(position);
+        books book = mListBook.get(position);
         if(book==null){
             return;
         }
