@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
                 Fragment fragment=new HomeFragment();
                 switch(item.getItemId()){
 
-//                    case R.id.action_home:
-//                        fragment=new HomeFragment();
-//                        break;
+                    case R.id.action_home:
+                        fragment=new HomeFragment();
+                        break;
                     case R.id.action_search:
                         fragment=new SearchFragment();
                         break;

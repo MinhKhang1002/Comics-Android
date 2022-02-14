@@ -16,11 +16,11 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder> {
+public class BookAdapter3 extends RecyclerView.Adapter<BookAdapter3.BookViewHolder> {
 
     private Context mContext;
     private List<Book> mListBook;
-    public BookAdapter(Context mContext){
+    public BookAdapter3(Context mContext){
         this.mContext = mContext;
     }
     public void setData(List<Book> list){
@@ -32,7 +32,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
     @Override
     public BookViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-            return new BookViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_book_gridlayout_2,parent,false));
+            return new BookViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_book_gridlayout_3,parent,false));
 
 
 

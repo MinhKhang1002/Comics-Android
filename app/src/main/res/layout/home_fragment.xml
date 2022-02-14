@@ -26,10 +26,10 @@
             app:sliderIndicatorMargin="15dp"
             app:sliderIndicatorOrientation="horizontal"
             app:sliderIndicatorPadding="3dp"
-            app:sliderIndicatorRadius="1.8dp"
+            app:sliderIndicatorRadius="1.5dp"
             app:sliderIndicatorSelectedColor="#DD1056"
             app:sliderIndicatorUnselectedColor="#FFF"
-            app:sliderScrollTimeInSec="4"
+            app:sliderScrollTimeInSec="2"
             app:sliderStartAutoCycle="true" />
         <TextView
             android:layout_width="wrap_content"
