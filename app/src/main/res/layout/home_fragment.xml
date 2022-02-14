@@ -34,7 +34,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hot trong ngày"
+            android:text="Top Day"
             android:textSize="20dp"
             android:paddingLeft="15dp"
             android:textColor="#3a3a3a"
@@ -50,7 +50,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hot trong tháng"
+            android:text="Top Month"
             android:textSize="20dp"
             android:paddingLeft="15dp"
             android:textColor="#3a3a3a"
@@ -58,6 +58,36 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewHome2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Top Rating"
+            android:textSize="20dp"
+            android:paddingLeft="15dp"
+            android:textColor="#3a3a3a"
+            android:textStyle="bold"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewTopRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Top Year"
+            android:textSize="20dp"
+            android:paddingLeft="15dp"
+            android:textColor="#3a3a3a"
+            android:textStyle="bold"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewYear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 

@@ -41,9 +41,9 @@ public class HomeFragment extends Fragment {
     IBookAPI iBookAPI;
     List<Book> list = new ArrayList<>();
     int[] images = {R.drawable.slider1, R.drawable.slider2, R.drawable.slider3, R.drawable.slider4};
-    RecyclerView recyclerViewBook, recyclerViewBook2;
-    BookAdapter bookAdapter;
-    BookAdapter3 bookAdapter3;
+    RecyclerView recyclerViewBook, recyclerViewBook2,recyclerViewTopRating,recyclerViewYear;
+    BookAdapter bookAdapter,bookAdapterLinear;
+    BookAdapter3 bookAdapter3,bookAdapterLinear1;
 
 
 
@@ -55,24 +55,38 @@ public class HomeFragment extends Fragment {
        // Slider();
         recyclerViewBook = view.findViewById(R.id.recyclerViewHome);
         recyclerViewBook2 = view.findViewById(R.id.recyclerViewHome2);
+        recyclerViewTopRating = view.findViewById(R.id.recyclerViewTopRating);
+        recyclerViewYear = view.findViewById(R.id.recyclerViewYear);
 
         bookAdapter = new BookAdapter(view.getContext());
+        bookAdapterLinear = new BookAdapter(view.getContext());
         bookAdapter3 = new BookAdapter3(view.getContext());
-
+        bookAdapterLinear1 = new BookAdapter3(view.getContext());
 
         GridLayoutManager gridLayoutManager2 = new GridLayoutManager(view.getContext(), 2);
         recyclerViewBook.setLayoutManager(gridLayoutManager2);
-        getTopViewDay();
-        getTopViewMonth();
 
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext());
-//        linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
+
+
+
 
         GridLayoutManager gridLayoutManager3 = new GridLayoutManager(view.getContext(),3);
-
-//        bookAdapter.setData(getListBookT());
         recyclerViewBook2.setLayoutManager(gridLayoutManager3);
 
+
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext());
+        linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
+        recyclerViewTopRating.setLayoutManager(linearLayoutManager);
+
+        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(view.getContext());
+        linearLayoutManager1.setOrientation(RecyclerView.HORIZONTAL);
+        recyclerViewYear.setLayoutManager(linearLayoutManager1);
+
+        getTopViewDay();
+        getTopViewMonth();
+        getTopRating();
+        getTopViewYear();
 
 
 
@@ -116,6 +130,41 @@ public class HomeFragment extends Fragment {
                 bookAdapter3.setData(listTopViewMonth);
 
                 recyclerViewBook2.setAdapter(bookAdapter3);
+            }
+
+            @Override
+            public void onFailure(Call<Book> call, Throwable t) {
+
+            }
+        });
+    }
+
+    public void getTopRating(){
+        RetrofitClient.getAPI().getTopRating().enqueue(new Callback<Book>() {
+            @Override
+            public void onResponse(Call<Book> call, Response<Book> response) {
+                List<Book> listTopRating = new ArrayList<>();
+                book = response.body();
+                listTopRating = book.getBooks();
+                bookAdapterLinear.setData(listTopRating);
+                recyclerViewTopRating.setAdapter(bookAdapterLinear);
+            }
+
+            @Override
+            public void onFailure(Call<Book> call, Throwable t) {
+
+            }
+        });
+    }
+    public void getTopViewYear(){
+        RetrofitClient.getAPI().getTopViewYear().enqueue(new Callback<Book>() {
+            @Override
+            public void onResponse(Call<Book> call, Response<Book> response) {
+                List<Book> listTopViewYear = new ArrayList<>();
+                book = response.body();
+                listTopViewYear = book.getBooks();
+                bookAdapterLinear1.setData(listTopViewYear);
+                recyclerViewYear.setAdapter(bookAdapterLinear1);
             }
 
             @Override

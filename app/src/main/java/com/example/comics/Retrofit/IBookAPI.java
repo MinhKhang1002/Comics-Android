@@ -15,6 +15,12 @@ public interface IBookAPI
     @GET("/book/top-view-month")
     Call<Book> getTopViewMonth();
 
+    @GET("/book/top-rating")
+    Call<Book> getTopRating();
+
+    @GET("/book/top-view-year")
+    Call<Book> getTopViewYear();
+
 
 
 }
