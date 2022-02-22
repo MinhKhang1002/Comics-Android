@@ -1,4 +1,4 @@
-package com.example.comics;
+package com.example.comics.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import com.example.comics.Fragment.HomeFragment;
 import com.example.comics.Fragment.LibraryFragment;
 import com.example.comics.Fragment.MineFragment;
 import com.example.comics.Fragment.SearchFragment;
+import com.example.comics.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {

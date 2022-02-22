@@ -16,7 +16,7 @@ public class Book {
     private float rate_count;
     private int status;
     private int search_number;
-    private long view;
+    private String view;
     private List<Book> books = new ArrayList<>();
 
     public void setBooks(List<Book> books) {
@@ -31,7 +31,7 @@ public class Book {
 
     }
 
-    public Book(String endpoint, String title, String author, String thumb, String theme, String description, String type, float rating, float rate_count, int status, int search_number, long view) {
+    public Book(String endpoint, String title, String author, String thumb, String theme, String description, String type, float rating, float rate_count, int status, int search_number, String view) {
         this.endpoint = endpoint;
         this.title = title;
         this.author = author;
@@ -135,11 +135,11 @@ public class Book {
         this.search_number = search_number;
     }
 
-    public long getView() {
+    public String getView() {
         return view;
     }
 
-    public void setView(long view) {
+    public void setView(String view) {
         this.view = view;
     }
 }

@@ -67,7 +67,10 @@ public class BookAdapter3 extends RecyclerView.Adapter<BookAdapter3.BookViewHold
             super(itemView);
             imgBook = itemView.findViewById(R.id.book_img);
             tvTittle = itemView.findViewById(R.id.book_tittle);
+
         }
+
+
     }
 
 
