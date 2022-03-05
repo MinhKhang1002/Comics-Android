@@ -1,6 +1,7 @@
 package com.example.comics.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.comics.Activity.DetailBookActivity;
 import com.example.comics.Models.Book;
 import com.example.comics.R;
 import com.squareup.picasso.Picasso;
@@ -67,7 +69,14 @@ public class BookAdapter3 extends RecyclerView.Adapter<BookAdapter3.BookViewHold
             super(itemView);
             imgBook = itemView.findViewById(R.id.book_img);
             tvTittle = itemView.findViewById(R.id.book_tittle);
-
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(mContext, DetailBookActivity.class);
+                    intent.putExtra("endpoint",mListBook.get(getAdapterPosition()).getEndpoint());
+                    mContext.startActivity(intent);
+                }
+            });
         }
 
 

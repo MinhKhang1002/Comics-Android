@@ -20,6 +20,16 @@ public interface IBookAPI
     @GET("/book/top-view-year")
     Call<Response<Book>> getTopViewYear();
 
+    @GET("/book/top-search")
+    Call<Response<Book>> getTopSearch();
+
+    @GET("/book/last-update")
+    Call<Response<Book>> getLastUpdate();
+
+    @GET("/book/top-follow")
+    Call<Response<Book>> getTopFollow();
+
+
 
 
 }

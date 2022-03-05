@@ -4,16 +4,20 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
+
+
 <ScrollView
+
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView">
+
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-
         <com.smarteist.autoimageslider.SliderView
             android:id="@+id/imageSlider"
             android:layout_width="match_parent"
@@ -31,6 +35,9 @@
             app:sliderIndicatorUnselectedColor="#FFF"
             app:sliderScrollTimeInSec="2"
             app:sliderStartAutoCycle="true" />
+
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -57,7 +64,7 @@
             android:textStyle="bold"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewHome2"
+            android:id="@+id/recyclerTopMonth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
@@ -92,9 +99,56 @@
             android:layout_height="wrap_content"
 
             android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Update"
+            android:textSize="20dp"
+            android:paddingLeft="15dp"
+            android:textColor="#3a3a3a"
+            android:textStyle="bold"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleViewLastUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Top Search"
+            android:textSize="20dp"
+            android:paddingLeft="15dp"
+            android:textColor="#3a3a3a"
+            android:textStyle="bold"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerTopSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Top Follow"
+            android:textSize="20dp"
+            android:paddingLeft="15dp"
+            android:textColor="#3a3a3a"
+            android:textStyle="bold"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleViewTopFollow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"/>
+
+
     </LinearLayout>              <!--        Home Slider-->
 
 </ScrollView>
+
+
 
 
 

@@ -12,7 +12,7 @@ public class RetrofitClient {
 
         if(retrofit==null){
             retrofit= new Retrofit.Builder()
-                    .baseUrl("https://one-read.herokuapp.com")
+                    .baseUrl("https://one-read-v2.herokuapp.com")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }

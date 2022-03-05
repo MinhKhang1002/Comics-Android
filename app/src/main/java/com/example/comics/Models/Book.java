@@ -1,10 +1,11 @@
 package com.example.comics.Models;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book {
+public class Book implements Serializable {
     private String endpoint;
     private String title;
     private String author;

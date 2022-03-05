@@ -1,10 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.DetailBookActivity"
-    android:background="@color/black">
+>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollViewDetail">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:id="@+id/imageViewDetail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                android:adjustViewBounds="true"
+                android:background="@drawable/imagetest"
+                />
+<!--            <TextView-->
+<!--                android:id="@+id/tvFollow"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="15.6M"-->
+<!--                android:textSize="18dp"-->
+<!--                android:paddingStart="250dp"-->
+<!--                android:paddingTop="170dp"-->
+<!--                -->
+<!--                />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDesc"
+                android:paddingTop="150dp"
+                android:paddingLeft="30dp"
+                android:textStyle="bold"
+                android:textSize="28dp"
+                android:textColor="#E6EBEF"
+                android:text="Truyện của Khang"/>
+            <TextView
+                android:id="@+id/tvView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="350dp"
+                android:paddingTop="170dp"
+                android:text="30M"
+                android:textSize="18dp"
+                android:textColor="@color/white"/>
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>
+</RelativeLayout>
