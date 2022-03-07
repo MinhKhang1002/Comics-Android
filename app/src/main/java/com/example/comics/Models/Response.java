@@ -8,6 +8,7 @@ public class Response <T>  {
     String message;
     List<T> data;
 
+
     public Response(){
 
     }

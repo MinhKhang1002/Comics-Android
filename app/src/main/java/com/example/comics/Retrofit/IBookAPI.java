@@ -1,10 +1,13 @@
 package com.example.comics.Retrofit;
 
 import com.example.comics.Models.Book;
+import com.example.comics.Models.Chapter;
 import com.example.comics.Models.Response;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Part;
+import retrofit2.http.Path;
 
 public interface IBookAPI
 {
@@ -29,6 +32,11 @@ public interface IBookAPI
     @GET("/book/top-follow")
     Call<Response<Book>> getTopFollow();
 
+    @GET("/book/detail/{book_endpoint}")
+    Call<Response<Book>> getBook(@Path("book_endpoint") String endpoint);
+
+    @GET("/chapter/all/{book_endpoint}")
+    Call<Response<Chapter>> getAllChapter(@Path("book_endpoint")String endpoint);
 
 
 

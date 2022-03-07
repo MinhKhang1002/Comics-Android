@@ -18,21 +18,36 @@ public class Book implements Serializable {
     private int status;
     private int search_number;
     private String view;
-    private List<Book> books = new ArrayList<>();
 
-    public void setBooks(List<Book> books) {
-        this.books = books;
+    public int getFollow() {
+        return follow;
+    }
+
+    public void setFollow(int follow) {
+        this.follow = follow;
+    }
+
+    private int follow;
+    //private List<Book> books = new ArrayList<>();
+    private List<Genre> genres = new ArrayList<>();
+
+
+
+    public List<Genre> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(List<Genre> genres) {
+        this.genres = genres;
     }
 
 
-    public List<Book> getBooks() {
-        return books;
-    }
     public Book(){
 
     }
 
-    public Book(String endpoint, String title, String author, String thumb, String theme, String description, String type, float rating, float rate_count, int status, int search_number, String view) {
+
+    public Book(String endpoint, String title, String author, String thumb, String theme, String description, String type, float rating, float rate_count, int status, int search_number, String view, int follow, List<Genre> genres) {
         this.endpoint = endpoint;
         this.title = title;
         this.author = author;
@@ -45,8 +60,10 @@ public class Book implements Serializable {
         this.status = status;
         this.search_number = search_number;
         this.view = view;
-    }
+        this.follow = follow;
 
+        this.genres = genres;
+    }
 
     public String getEndpoint() {
         return endpoint;

@@ -114,6 +114,7 @@ public class HomeFragment extends Fragment {
         view = inflater.inflate(R.layout.home_fragment, container, false);
         AnhXa();
         Slider();
+
         if(listTopDay.size() ==0){
             getTopViewDay();
             getTopViewMonth();
@@ -357,6 +358,8 @@ public class HomeFragment extends Fragment {
         sliderView.startAutoCycle();
 
     }
+
+
 
 
 
