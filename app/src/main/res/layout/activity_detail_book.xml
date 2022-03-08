@@ -1,294 +1,327 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.DetailBookActivity"
 >
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    >
-    <RelativeLayout
-        android:id="@+id/scrollViewDetail"
+
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#D6DAD2"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp">
 
-        >
-        <ImageView
-            android:id="@+id/btn_go_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_go_back_light"
-            android:layout_margin="10dp"
-            android:scaleType="fitXY"
-            />
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="20dp"
-            android:orientation="horizontal"
-            >
+            android:layout_height="match_parent">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="6dp">
-
-                <ImageView
-                    android:id="@+id/imageViewDetail"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-
-                    android:scaleType="centerCrop" />
-
-            </androidx.cardview.widget.CardView>
-
-            <LinearLayout
+            <RelativeLayout
+                android:id="@+id/scrollViewDetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:background="#D6DAD2"
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                >
+
+                <ImageView
+                    android:id="@+id/btn_go_back"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20sp"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tvTittle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Chuyện cũ qua rồi "
-                        android:textColor="#090808"
-                        android:textSize="25sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20sp"
-                    android:layout_marginTop="5dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-
-                        android:id="@+id/tvAuthor"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Huỳnh Khang "
-                        android:textColor="#090808"
-                        android:textSize="15sp"
-                        android:textStyle="italic" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20sp"
-                    android:layout_marginTop="5dp"
-                    android:orientation="horizontal">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:cardCornerRadius="5dp">
-
-                        <TextView
-                            android:id="@+id/tvGenre"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="3dp"
-                            android:text="Minh"
-                            android:textColor="#090808"
-                            android:textSize="15sp"
-                            android:textStyle="italic" />
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        app:cardCornerRadius="5dp">
-
-                        <TextView
-                            android:id="@+id/tvGenre1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="3dp"
-                            android:text="Minh"
-                            android:textColor="#090808"
-                            android:textSize="15sp"
-                            android:textStyle="italic" />
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        app:cardCornerRadius="5dp">
-
-                        <TextView
-                            android:id="@+id/tvGenre2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="3dp"
-                            android:text="Huỳnh Khang "
-                            android:textColor="#090808"
-                            android:textSize="15sp"
-                            android:textStyle="italic" />
-                    </androidx.cardview.widget.CardView>
-
-
-                </LinearLayout>
+                    android:layout_margin="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_go_back_light" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="20dp"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/tvView"
-                        android:layout_width="wrap_content"
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="130dp"
                         android:layout_height="wrap_content"
-                        android:text="10M"
-                        android:textColor="#090808"
-                        android:textSize="15sp" />
+                        app:cardCornerRadius="6dp">
 
-                    <TextView
-                        android:id="@+id/tvRating"
-                        android:layout_width="wrap_content"
+                        <ImageView
+                            android:id="@+id/imageViewDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            android:scaleType="centerCrop" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:text="10M"
-                        android:textColor="#090808"
-                        android:textSize="15sp" />
+                        android:orientation="vertical">
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20sp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvTittle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Chuyện cũ qua rồi "
+                                android:textColor="#090808"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20sp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+
+                                android:id="@+id/tvAuthor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Huỳnh Khang "
+                                android:textColor="#090808"
+                                android:textSize="15sp"
+                                android:textStyle="italic" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20sp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="5dp">
+
+                                <TextView
+                                    android:id="@+id/tvGenre"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="3dp"
+                                    android:text="Minh"
+                                    android:textColor="#090808"
+                                    android:textSize="15sp"
+                                    android:textStyle="italic" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                app:cardCornerRadius="5dp">
+
+                                <TextView
+                                    android:id="@+id/tvGenre1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="3dp"
+                                    android:text="Minh"
+                                    android:textColor="#090808"
+                                    android:textSize="15sp"
+                                    android:textStyle="italic" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                app:cardCornerRadius="5dp">
+
+                                <TextView
+                                    android:id="@+id/tvGenre2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="3dp"
+                                    android:text="Huỳnh Khang "
+                                    android:textColor="#090808"
+                                    android:textSize="15sp"
+                                    android:textStyle="italic" />
+                            </androidx.cardview.widget.CardView>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="25dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/tvView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="10M"
+                                android:textColor="#090808"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/tvRating"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30dp"
+                                android:text="10M"
+                                android:textColor="#090808"
+                                android:textSize="15sp" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
 
-            </LinearLayout>
+            </RelativeLayout>
 
-        </LinearLayout>
-
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/scrollViewDetail">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="10dp">
-                <TextView
-                    android:id="@+id/tvChiTiet"
-                    android:layout_margin="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="25sp"
-                    android:text="Chi Tiết"
-                    android:textStyle="bold"
-                    android:textColor="#090808"/>
+                android:layout_below="@+id/scrollViewDetail"
+                android:orientation="vertical">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
-                    <RatingBar
-                        android:id="@+id/ratingBar"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="75dp"
-                        android:isIndicator="true"
-                        android:numStars="5"
-                        android:progressBackgroundTint="#EAE3E3"
-                        android:progressTint="#F6F609"
-                        android:rating="4.5"
-                        android:scaleX=".5"
-                        android:scaleY=".5"
-                        android:stepSize="0.1" />
+                        android:layout_marginLeft="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvChiTiet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="Chi Tiết"
+                            android:textColor="#090808"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <RatingBar
+                                android:id="@+id/ratingBar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="75dp"
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:progressBackgroundTint="#EAE3E3"
+                                android:progressTint="#F6F609"
+                                android:rating="4.5"
+                                android:scaleX=".5"
+                                android:scaleY=".5"
+                                android:stepSize="0.1" />
+
+                            <TextView
+                                android:id="@+id/tvScoreRating"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginStart="260dp"
+                                android:layout_marginTop="12dp"
+                                android:text="4.5"
+                                android:textColor="#090808"
+                                android:textSize="18sp" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
 
                     <TextView
-                        android:id="@+id/tvScoreRating"
+                        android:id="@+id/tvDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="45dp"
+                        android:ellipsize="end"
+                        android:maxLines="4"
+                        android:text="Tiểu thuyết là một thể loại văn xuôi có hư cấu"
+                        android:textColor="#2E2525"
+                        android:textSize="15sp"
+                        tools:ignore="HardcodedText" />
 
-                        android:layout_marginStart="260dp"
-                        android:layout_marginTop="12dp"
-                        android:text="4.5"
-                        android:textColor="#090808"
-                        android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/tvReadMore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvDesc"
+                        android:layout_marginStart="20dp"
+                        android:text="Xem thêm"
+                        android:textColor="#2E9BF3"
+
+                        android:textSize="15sp" />
+
+
                 </RelativeLayout>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Có thể bạn sẽ thích"
+                    android:textColor="#090808"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycleViewRelate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp" />
+
+
             </LinearLayout>
-            <TextView
-                android:layout_marginStart="20dp"
-                android:id="@+id/tvDesc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textColor="#2E2525"
-                android:text="Tiểu thuyết là một thể loại văn xuôi có hư cấu"
-                android:layout_marginTop="45dp"
-                android:ellipsize="end"
-                android:maxLines="4"
-                tools:ignore="HardcodedText"
-                />
-
-            <TextView
-                android:id="@+id/tvReadMore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tvDesc"
-                android:layout_marginStart="20dp"
-                android:text="Xem thêm"
-                android:textColor="#2E9BF3"
-
-                android:textSize="15sp" />
-
-
-
-
-
 
 
         </RelativeLayout>
 
 
+    </ScrollView>
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
 
-    </LinearLayout>
+        android:id="@+id/nav_bottom_detail"
+        style="@style/BottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@color/color_bottom_nav"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
+        app:itemTextColor="@color/color_bottom_nav"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_bottom_nav" />
+
 
 </RelativeLayout>
-
-
-
-
-
-</ScrollView>

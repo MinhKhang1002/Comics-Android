@@ -38,6 +38,9 @@ public interface IBookAPI
     @GET("/chapter/all/{book_endpoint}")
     Call<Response<Chapter>> getAllChapter(@Path("book_endpoint")String endpoint);
 
+    @GET("/book/relate-book/{endpoint}")
+    Call<Response<Book>> getRelateBook(@Path("endpoint") String endpoint);
+
 
 
 }

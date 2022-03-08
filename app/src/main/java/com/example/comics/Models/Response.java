@@ -7,7 +7,7 @@ public class Response <T>  {
     int code;
     String message;
     List<T> data;
-
+    
 
     public Response(){
 

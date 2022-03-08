@@ -1,6 +1,8 @@
 package com.example.comics.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.comics.Adapter.BookAdapter3;
 import com.example.comics.Models.Book;
 import com.example.comics.Models.Chapter;
 import com.example.comics.Models.Response;
@@ -39,6 +42,8 @@ public class DetailBookActivity extends AppCompatActivity {
             ,tvReadMore;
     ImageView imageView,btn_go_back;
     RatingBar ratingBar;
+    RecyclerView recyclerViewRelate;
+    BookAdapter3 relateBookAdapter = new BookAdapter3(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +51,12 @@ public class DetailBookActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_book);
         AnhXa();
         book.setEndpoint(getIntent().getStringExtra("endpoint"));
-        test();
+
         getDetailBook();
         goBack();
         readMore();
-
+        getRelateBook();
+        initRelateBook();
     }
     public void readMore(){
         tvReadMore.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +67,13 @@ public class DetailBookActivity extends AppCompatActivity {
                 tvReadMore.setVisibility(View.GONE);
             }
         });
+    }
+
+    public void initRelateBook(){
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,3);
+        recyclerViewRelate.setLayoutManager(gridLayoutManager);
+        recyclerViewRelate.setAdapter(relateBookAdapter);
+        relateBookAdapter.setData(listBook);
     }
     public void goBack(){
         btn_go_back.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +95,7 @@ public class DetailBookActivity extends AppCompatActivity {
         tvDesc = findViewById(R.id.tvDesc);
         btn_go_back = findViewById(R.id.btn_go_back);
         tvReadMore = findViewById(R.id.tvReadMore);
+        recyclerViewRelate = findViewById(R.id.recycleViewRelate);
     }
 
 
@@ -109,20 +123,26 @@ public class DetailBookActivity extends AppCompatActivity {
             }
         });
     }
-
-    public void test(){
-        RetrofitClient.getAPI().getAllChapter(book.getEndpoint()).enqueue(new Callback<Response<Chapter>>() {
+    public void getRelateBook(){
+        RetrofitClient.getAPI().getRelateBook(book.getEndpoint()).enqueue(new Callback<Response<Book>>() {
             @Override
-            public void onResponse(Call<Response<Chapter>> call, retrofit2.Response<Response<Chapter>> response) {
-                reponseChapter = response.body();
+            public void onResponse(Call<Response<Book>> call, retrofit2.Response<Response<Book>> response) {
+                reponseBook = response.body();
+                listBook = reponseBook.getData();
+                if(listBook.size()!=0){
+                    listBook.remove(9);
+                }
 
-               // Toast.makeText(DetailBookActivity.this, reponseChapter.getData().get(0).getChapter_endpoint(), Toast.LENGTH_SHORT).show();
+                relateBookAdapter.setData(listBook);
+
             }
 
             @Override
-            public void onFailure(Call<Response<Chapter>> call, Throwable t) {
+            public void onFailure(Call<Response<Book>> call, Throwable t) {
+                Toast.makeText(DetailBookActivity.this, "Call API failed Relate", Toast.LENGTH_SHORT).show();
 
             }
         });
     }
+
 }
