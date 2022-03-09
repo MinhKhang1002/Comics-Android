@@ -39,7 +39,9 @@ public class DetailBookActivity extends AppCompatActivity {
             ,tvGenre2
             ,tvScoreRating
             ,tvDesc
-            ,tvReadMore;
+            ,tvReadMore
+            ,tvView
+            ,tvFollow;
     ImageView imageView,btn_go_back;
     RatingBar ratingBar;
     RecyclerView recyclerViewRelate;
@@ -57,6 +59,14 @@ public class DetailBookActivity extends AppCompatActivity {
         readMore();
         getRelateBook();
         initRelateBook();
+        tvView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetailBookActivity.this,ChapterActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
     public void readMore(){
         tvReadMore.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +100,8 @@ public class DetailBookActivity extends AppCompatActivity {
         tvGenre = findViewById(R.id.tvGenre);
         tvGenre1 = findViewById(R.id.tvGenre1);
         tvGenre2 = findViewById(R.id.tvGenre2);
+        tvView = findViewById(R.id.tvView);
+        tvFollow = findViewById(R.id.tvFollow);
         ratingBar = findViewById(R.id.ratingBar);
         tvScoreRating = findViewById(R.id.tvScoreRating);
         tvDesc = findViewById(R.id.tvDesc);
@@ -110,6 +122,7 @@ public class DetailBookActivity extends AppCompatActivity {
                 tvGenre.setText(listBook.get(0).getGenres().get(0).getTitle());
                 tvGenre1.setText(listBook.get(0).getGenres().get(1).getTitle());
                 tvGenre2.setText(listBook.get(0).getGenres().get(2).getTitle());
+
                 ratingBar.setRating(4.5F);
                 tvScoreRating.setText(listBook.get(0).getRating()+"");
                 tvDesc.setText(listBook.get(0).getDescription());

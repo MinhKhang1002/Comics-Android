@@ -1,10 +1,22 @@
 package com.example.comics.Models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Chapter {
     private String chapter_endpoint;
     private String book_endpoint;
     private String title;
     private String time;
+    List<String> images = new ArrayList<>();
+
+    public List<String> getImages() {
+        return images;
+    }
+
+    public void setImages(List<String> images) {
+        this.images = images;
+    }
 
     public Chapter() {
     }
