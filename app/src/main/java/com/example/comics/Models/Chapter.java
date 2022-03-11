@@ -1,9 +1,10 @@
 package com.example.comics.Models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Chapter {
+public class Chapter implements Serializable {
     private String chapter_endpoint;
     private String book_endpoint;
     private String title;

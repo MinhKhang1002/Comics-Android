@@ -2,6 +2,7 @@ package com.example.comics.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,15 +14,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.comics.Activity.ChapterActivity;
 import com.example.comics.Models.Book;
+import com.example.comics.Models.Chapter;
 import com.example.comics.R;
 
-public class BottomSheetAdapter extends RecyclerView.Adapter<BottomSheetAdapter.ViewHolder> {
-    Book book;
-    Context mContext;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-    public BottomSheetAdapter(Book book, Context mContext) {
-        this.book = book;
-        this.mContext = mContext;
+public class BottomSheetAdapter extends RecyclerView.Adapter<BottomSheetAdapter.ViewHolder> {
+    List<Chapter> listChapter = new ArrayList<>();
+    Context mContext;
+    public BottomSheetAdapter(Context context){
+        this.mContext = context;
+    }
+    public void setData(List<Chapter> chapters){
+        this.listChapter = chapters;
     }
 
     @NonNull
@@ -33,13 +40,13 @@ public class BottomSheetAdapter extends RecyclerView.Adapter<BottomSheetAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.tvTittle.setText(book.getChapters().get(position).getTitle());
-        holder.tvTime.setText(book.getChapters().get(position).getTime().split(" ")[0]);
+        holder.tvTittle.setText(listChapter.get(position).getTitle());
+        holder.tvTime.setText(listChapter.get(position).getTime().split(" ")[0]);
     }
 
     @Override
     public int getItemCount() {
-        return book.getChapters().size();
+        return listChapter.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -53,7 +60,7 @@ public class BottomSheetAdapter extends RecyclerView.Adapter<BottomSheetAdapter.
                 public void onClick(View view) {
                     Intent intent = new Intent(mContext, ChapterActivity.class);
                     intent.putExtra("position",getAdapterPosition());
-                    intent.putExtra("book",book);
+                    intent.putExtra("book", (Serializable) listChapter);
                     mContext.startActivity(intent);
                 }
             });

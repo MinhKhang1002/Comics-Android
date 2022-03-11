@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.comics.Adapter.BookAdapter3;
+import com.example.comics.Adapter.BottomSheetAdapter;
+import com.example.comics.Fragment.BottomSheetFragment;
 import com.example.comics.Models.Book;
 import com.example.comics.Models.Chapter;
 import com.example.comics.Models.Response;
@@ -32,6 +34,7 @@ public class DetailBookActivity extends AppCompatActivity {
     List<Book> listBook = new ArrayList<>();
     Response<Book> reponseBook = new Response<>();
     Response<Chapter> reponseChapter = new Response<>();
+    List<Chapter> listChapter = new ArrayList<>();
     TextView tvTittle
             ,tvAuthor
             ,tvGenre
@@ -46,6 +49,8 @@ public class DetailBookActivity extends AppCompatActivity {
     RatingBar ratingBar;
     RecyclerView recyclerViewRelate;
     BookAdapter3 relateBookAdapter = new BookAdapter3(this);
+    BottomSheetFragment bottomSheetFragment = new BottomSheetFragment(DetailBookActivity.this); ;
+    BottomSheetAdapter bottomSheetAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +58,10 @@ public class DetailBookActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_book);
         AnhXa();
         book.setEndpoint(getIntent().getStringExtra("endpoint"));
-
+        bottomSheetAdapter = new BottomSheetAdapter(DetailBookActivity.this);
         getDetailBook();
         goBack();
+
         readMore();
         getRelateBook();
         initRelateBook();
@@ -64,6 +70,13 @@ public class DetailBookActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(DetailBookActivity.this,ChapterActivity.class);
                 startActivity(intent);
+            }
+        });
+        tvFollow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                bottomSheetFragment.show(getSupportFragmentManager(),bottomSheetFragment.getTag());
             }
         });
 
@@ -122,7 +135,8 @@ public class DetailBookActivity extends AppCompatActivity {
                 tvGenre.setText(listBook.get(0).getGenres().get(0).getTitle());
                 tvGenre1.setText(listBook.get(0).getGenres().get(1).getTitle());
                 tvGenre2.setText(listBook.get(0).getGenres().get(2).getTitle());
-
+                tvView.setText(listBook.get(0).getView()+"M");
+                tvFollow.setText(listBook.get(0).getFollow()+"M");
                 ratingBar.setRating(4.5F);
                 tvScoreRating.setText(listBook.get(0).getRating()+"");
                 tvDesc.setText(listBook.get(0).getDescription());
@@ -157,5 +171,7 @@ public class DetailBookActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
 }

@@ -44,5 +44,11 @@ public interface IBookAPI
     @GET("/chapter/detail/grand-blue/chapter-74?view=true")
     Call<Response<Chapter>> getChapter();
 
+    @GET("/chapter/all/{book_endpoint}")
+    Call<Response<Chapter>> getListChapter(@Path("book_endpoint") String endpoint);
+
+    @GET("/chapter/detail/{book_endpoint}/{chapter_endpoint}?view=true")
+    Call<Response<Chapter>> getDetailChapter(@Path("book_endpoint")String book_endpoint,@Path("chapter_endpoint")String chapter_endpoint);
+
 
 }
