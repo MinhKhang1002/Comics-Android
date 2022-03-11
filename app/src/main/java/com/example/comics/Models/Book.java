@@ -30,8 +30,15 @@ public class Book implements Serializable {
     private int follow;
     //private List<Book> books = new ArrayList<>();
     private List<Genre> genres = new ArrayList<>();
+    private List<Chapter> chapters = new ArrayList<>();
 
+    public List<Chapter> getChapters() {
+        return chapters;
+    }
 
+    public void setChapters(List<Chapter> chapters) {
+        this.chapters = chapters;
+    }
 
     public List<Genre> getGenres() {
         return genres;
